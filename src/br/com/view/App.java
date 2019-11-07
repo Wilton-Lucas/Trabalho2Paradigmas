@@ -1,15 +1,19 @@
 package br.com.view;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
 
 import br.com.controller.AlunoService;
+import br.com.hibernate.dao.HDAO;
 import br.com.model.Aluno;
 import br.com.model.Telefone;
 
 public class App {
 
 	public static void main(String[] args) {
-		int i = 1;
+		/*int i = 1;
 		AlunoService service = new AlunoService();
 		while (i != 0) {
 			i = Integer.parseInt(JOptionPane.showInputDialog(
@@ -58,6 +62,26 @@ public class App {
 				break;
 			}
 
-		}
+		}*/
+		
+		// testando as classes HDAO
+		 EntityManagerFactory factory = Persistence.createEntityManagerFactory("appPU");
+		    EntityManager manager = factory.createEntityManager();
+
+		    Aluno a = new Aluno();
+			a.setMatricula("F123");
+			a.setNome("Wilton");
+		    
+		    manager.getTransaction().begin();        
+		    manager.persist(a);
+		    manager.getTransaction().commit();    
+
+		    System.out.println("ID do Aluno: " + a.getIdAluno());
+
+		    manager.close();
+		
+		
+		
+		
 	}
 }

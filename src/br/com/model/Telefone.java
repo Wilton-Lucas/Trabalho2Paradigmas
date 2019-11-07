@@ -1,6 +1,13 @@
 package br.com.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class Telefone {
+	@Id
+	@GeneratedValue
 	private int idTelefone;
 	private String numero;
 
