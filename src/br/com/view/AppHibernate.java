@@ -26,7 +26,7 @@ public class AppHibernate {
 
 			case 1:
 				Aluno a2 = new Aluno ();
-				a2.setIdAluno(Integer.parseInt(JOptionPane.showInputDialog("Informe o id")));
+				
 				a2.setNome(JOptionPane.showInputDialog("Digite o nome"));
 				a2.setMatricula(JOptionPane.showInputDialog("Digite a matricula"));
 				Telefone t1 = new Telefone();

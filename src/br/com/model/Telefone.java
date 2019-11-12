@@ -4,6 +4,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -14,6 +15,10 @@ public class Telefone {
 	@Column(name="codigo" )
 	private int idTelefone;
 	private String numero;
+	
+	@OneToOne(mappedBy="telefone",targetEntity=Aluno.class)
+	Aluno aluno;
+	
 
 	public void setIdTelefone(int idTelefone) {
 		this.idTelefone = idTelefone;
