@@ -25,7 +25,7 @@ public aspect Aspect {
 	after(Aluno a) : setMatricula() && target(a)
 	{
 		if (a.getMatricula().equals("")) {
-			System.out.println("Valor para matricula não adequado");
+			System.out.println("Valor para matricula nï¿½o adequado");
 		} else {
 			System.out.println("Valor matricula adequado");
 		}
@@ -34,7 +34,7 @@ public aspect Aspect {
 	after(Aluno a) : setNome() && target(a)
 	{
 		if (a.getNome().equals("") || Pattern.compile("[0-9]").matcher(a.getNome()).find()) {
-			System.out.println("Valor para nome não adequado");
+			System.out.println("Valor para nome nï¿½o adequado");
 		} else {
 			System.out.println("Valor nome adequado");
 		}
@@ -43,7 +43,7 @@ public aspect Aspect {
 	after(Aluno a) : setTelefone() && target(a)
 	{
 		if (a.getTelefone().equals("") || Pattern.compile("[a-zA-Z]").matcher(a.getNome()).find()) {
-			System.out.println("Valor para telefone não adequado");
+			System.out.println("Valor para telefone nï¿½o adequado");
 		} else {
 			System.out.println("Valor telefone adequado");
 		}
@@ -53,7 +53,7 @@ public aspect Aspect {
 	 * before(AlunoDAO dao): inserir() && target(dao){ try { dao.setConn(
 	 * DriverManager.getConnection("jdbc:mysql://172.17.0.2/pdp","root","admin"));
 	 * dao.setStmt(dao.getConn().createStatement());
-	 * System.out.println("conexão criada com sucesso!");
+	 * System.out.println("conexï¿½o criada com sucesso!");
 	 * 
 	 * }catch(Exception E){ E.printStackTrace(); } }
 	 */

@@ -8,16 +8,17 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.swing.JOptionPane;
 
-import br.com.controller.AlunoService;
+
+import br.com.controller.AlunoServiceHibernate;
 import br.com.hibernate.dao.HDAO;
 import br.com.model.Aluno;
 import br.com.model.Telefone;
 
-public class App {
+public class AppHibernate {
 
 	public static void main(String[] args) {
-		/*int i = 1;
-		AlunoService service = new AlunoService();
+		int i = 1;
+		AlunoServiceHibernate service = new AlunoServiceHibernate();
 		while (i != 0) {
 			i = Integer.parseInt(JOptionPane.showInputDialog(
 					"Para inserir um aluno digite 1\nPara editar um aluno digite 2\nPara apagar digite 3\nPara buscar digite 4\nPara buscar todos digite 5\nPara sair digite qualquer outra coisa"));
@@ -65,27 +66,8 @@ public class App {
 				break;
 			}
 
-		}*/
+		}
 		
-		// testando as classes HDAO
-		 EntityManagerFactory factory = Persistence.createEntityManagerFactory("appPU");
-		    EntityManager manager = factory.createEntityManager();
-
-		    Aluno a = new Aluno();
-			a.setMatricula("F123");
-			a.setNome("Wilton");
-			Telefone t = new Telefone();
-			t.setNumero("98765431");
-			
-			a.setTelefone(t);
-		    
-		    manager.getTransaction().begin();        
-		    manager.persist(a);
-		    manager.getTransaction().commit();    
-
-		    System.out.println("ID do Aluno: " + a.getIdAluno());
-
-		    manager.close();
 		
 		
 		

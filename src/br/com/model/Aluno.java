@@ -1,28 +1,33 @@
 package br.com.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 
 
 @Entity
+@Table(name="aluno")
 public class Aluno {
 	@Id
 	@GeneratedValue
-	@Column(name="id_aluno")
+	@Column(name="codigo")
 	private int idAluno;
 	
 	private String nome;
 	private String matricula;
 	
-	@OneToOne
-	@JoinColumn(name="id_aluno")
-	private Telefone fone;
+	@OneToOne	
+	@JoinColumn(name="codigo")
+	private Telefone telefone;
 
 	public void setIdAluno(int idAluno) {
 		this.idAluno = idAluno;
@@ -48,12 +53,18 @@ public class Aluno {
 		return this.matricula;
 	}
 
-	public void setTelefone(Telefone fone) {
-		this.fone = fone;
+	public Telefone getTelefone() {
+		return telefone;
 	}
 
-	public Telefone getTelefone() {
-		return this.fone;
+	public void setTelefone(Telefone telefone) {
+		this.telefone = telefone;
 	}
+
+	
+
+	
+
+	
 
 }

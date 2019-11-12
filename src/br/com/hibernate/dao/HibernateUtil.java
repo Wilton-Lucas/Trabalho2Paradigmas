@@ -4,6 +4,7 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;   
 import org.hibernate.SessionFactory;   
 import org.hibernate.cfg.AnnotationConfiguration;   
+import org.hibernate.cfg.Configuration;
   
 public class HibernateUtil {   
        
@@ -11,7 +12,7 @@ public class HibernateUtil {
        
     static {   
         try {   
-            sessionFactory = new AnnotationConfiguration()   
+            sessionFactory = new Configuration()   
                 .configure()   
                 .buildSessionFactory();   
                
