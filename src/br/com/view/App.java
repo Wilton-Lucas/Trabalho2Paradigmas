@@ -16,7 +16,8 @@ import br.com.model.Telefone;
 public class App {
 
 	public static void main(String[] args) {
-		/*int i = 1;
+		
+		int i = 1;
 		AlunoService service = new AlunoService();
 		while (i != 0) {
 			i = Integer.parseInt(JOptionPane.showInputDialog(
@@ -31,7 +32,7 @@ public class App {
 				Telefone t1 = new Telefone();
 				t1.setIdTelefone(1);
 				a2.setTelefone(t1);
-				JOptionPane.showMessageDialog(null, service.addAluno(a2));
+				JOptionPane.showMessageDialog(null, service.inserir(a2));
 				break;
 
 			case 2:
@@ -42,22 +43,22 @@ public class App {
 				Telefone t = new Telefone();
 				t.setIdTelefone(1);
 				a1.setTelefone(t);
-				JOptionPane.showMessageDialog(null, service.editAluno(a1));
+				JOptionPane.showMessageDialog(null, service.alterar(a1));
 				break;
 
 			case 3:
 				Aluno a = new Aluno();
 				a.setIdAluno(Integer.parseInt(JOptionPane.showInputDialog("Informe o id do Aluno:")));
-				JOptionPane.showMessageDialog(null, service.deleteAluno(a));
+				JOptionPane.showMessageDialog(null, service.apagar(a));
 				break;
 				
 			case 4:
 				JOptionPane.showMessageDialog(null,
-						service.findByIdAluno(Integer.parseInt(JOptionPane.showInputDialog("Informe o id do Aluno:"))));
+						service.buscar(new Aluno(), Integer.parseInt(JOptionPane.showInputDialog("Informe o id do Aluno:"))));
 				break;
 				
 			case 5:
-				JOptionPane.showMessageDialog(null, service.findAllAlunos());
+				JOptionPane.showMessageDialog(null, service.buscarTodos(new Aluno()));
 				break;
 				
 			default:
@@ -65,9 +66,9 @@ public class App {
 				break;
 			}
 
-		}*/
+		}
 		
-		// testando as classes HDAO
+		/* testando as classes HDAO
 		 EntityManagerFactory factory = Persistence.createEntityManagerFactory("appPU");
 		    EntityManager manager = factory.createEntityManager();
 
@@ -88,7 +89,7 @@ public class App {
 		    manager.close();
 		
 		
-		
+		*/
 		
 	}
 }
